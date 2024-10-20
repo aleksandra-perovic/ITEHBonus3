@@ -31,6 +31,18 @@
             $query_str = "INSERT INTO prijave(predmet, katedra, sala, datum) VALUES ('$prijava->predmet', '$prijava->katedra', '$prijava->sala', '$prijava->datum')";
             return $conn->query($query_str);
         }
+        public static function getById($id, mysqli $conn)
+        {
+            $query_str = "SELECT * FROM prijave WHERE id=$id";
+            return $conn->query($query_str);
+        }
+        public static function update(Prijava $prijava, mysqli $conn)
+        {
+            $query_str = "UPDATE prijave(predmet, katedra, sala, datum) VALUES ('$prijava->predmet', '$prijava->katedra', '$prijava->sala', '$prijava->datum')";
+            return $conn->query($query_str);
+        }
+
+
 
 
 }
